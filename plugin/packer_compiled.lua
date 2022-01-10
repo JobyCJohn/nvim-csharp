@@ -246,13 +246,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: gruvbox
-time([[Setup for gruvbox]], true)
-try_loadstring("\27LJ\2\nÁ\1\0\0\3\0\f\1\0246\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2\t\0\0\0X\0\4€6\0\0\0009\0\4\0+\1\2\0=\1\5\0006\0\0\0009\0\4\0'\1\a\0=\1\6\0006\0\0\0009\0\4\0'\1\t\0=\1\b\0006\0\0\0009\0\n\0'\2\v\0B\0\2\1K\0\1\0\24colorscheme gruvbox\bcmd\tdark\15background\venable\vsyntax\18termguicolors\bopt\nwin32\bhas\afn\bvim\2\0", "setup", "gruvbox")
-time([[Setup for gruvbox]], false)
-time([[packadd for gruvbox]], true)
-vim.cmd [[packadd gruvbox]]
-time([[packadd for gruvbox]], false)
 -- Setup for: vim-markdown
 time([[Setup for vim-markdown]], true)
 try_loadstring('\27LJ\2\nh\0\0\2\0\4\0\t6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0K\0\1\0\29vim_markdown_frontmatter"vim_markdown_folding_disabled\6g\bvim\0', "setup", "vim-markdown")
@@ -260,30 +253,25 @@ time([[Setup for vim-markdown]], false)
 time([[packadd for vim-markdown]], true)
 vim.cmd [[packadd vim-markdown]]
 time([[packadd for vim-markdown]], false)
+-- Setup for: gruvbox
+time([[Setup for gruvbox]], true)
+try_loadstring("\27LJ\2\nÁ\1\0\0\3\0\f\1\0246\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2\t\0\0\0X\0\4€6\0\0\0009\0\4\0+\1\2\0=\1\5\0006\0\0\0009\0\4\0'\1\a\0=\1\6\0006\0\0\0009\0\4\0'\1\t\0=\1\b\0006\0\0\0009\0\n\0'\2\v\0B\0\2\1K\0\1\0\24colorscheme gruvbox\bcmd\tdark\15background\venable\vsyntax\18termguicolors\bopt\nwin32\bhas\afn\bvim\2\0", "setup", "gruvbox")
+time([[Setup for gruvbox]], false)
+time([[packadd for gruvbox]], true)
+vim.cmd [[packadd gruvbox]]
+time([[packadd for gruvbox]], false)
 -- Setup for: goyo.vim
 time([[Setup for goyo.vim]], true)
 try_loadstring("\27LJ\2\nQ\0\0\2\0\6\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0K\0\1\0\t100%\16goyo_height\b120\15goyo_width\6g\bvim\0", "setup", "goyo.vim")
 time([[Setup for goyo.vim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\nñ\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0'\3\2\0'\4\3\0006\5\4\0B\0\5\0016\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0005\3\t\0=\3\n\0025\3\v\0=\3\f\0025\3\r\0=\3\14\2B\0\2\1K\0\1\0\ffilters\1\0\1\rdotfiles\2\tview\1\0\1\nwidth\b20%\24update_focused_file\1\0\1\venable\2\1\0\1\15update_cwd\2\nsetup\14nvim-tree\frequire\foptions\29<cmd>:NvimTreeToggle<CR>\14<Leader>e\6n\bmap\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\n¤\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0'\3\2\0'\4\3\0004\5\0\0B\0\5\0016\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\a\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire+<cmd>lua require'hop'.hint_words()<cr>\14<Leader>h\6n\bmap\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.treesitter\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15config.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: vim-fugitive
 time([[Config for vim-fugitive]], true)
 try_loadstring("\27LJ\2\nÝ\2\0\0\6\0\15\0+6\0\0\0'\2\1\0'\3\2\0'\4\3\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\5\0'\4\6\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\a\0'\4\b\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\t\0'\4\n\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\v\0'\4\f\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\r\0'\4\6\0006\5\4\0B\0\5\0016\0\0\0'\2\1\0'\3\14\0'\4\b\0006\5\4\0B\0\5\1K\0\1\0\r<A-Left>\14<A-Right>\a]c\r<A-Down>\a[c\v<A-Up>\21:diffget //3<CR>\15<Leader>gh\21:diffget //2<CR>\15<Leader>gl\foptions4<cmd>lua require'config.utils'.git_status()<CR>\15<Leader>gs\6n\bmap\0", "config", "vim-fugitive")
 time([[Config for vim-fugitive]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\n¤\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0'\3\2\0'\4\3\0004\5\0\0B\0\5\0016\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\a\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire+<cmd>lua require'hop'.hint_words()<cr>\14<Leader>h\6n\bmap\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21config.telescope\frequire\0", "config", "telescope.nvim")
@@ -300,6 +288,18 @@ time([[Config for lualine.nvim]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\nÛ\1\0\0\6\0\r\1\0186\0\0\0'\2\1\0'\3\2\0'\4\3\0006\5\4\0B\0\5\0016\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\v\0006\3\b\0009\3\t\0039\3\n\3\24\3\0\3=\3\f\2B\0\2\1K\0\1\0\tsize\1\0\3\17open_mapping\n<c-`>\18close_on_exit\1\20start_in_insert\2\nlines\6o\bvim\nsetup\15toggleterm\frequire\foptions\18':<C-\\><C-n>'\n<Esc>\6t\bmapµæÌ™\19™³æþ\3\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\nñ\1\0\0\6\0\15\0\0196\0\0\0'\2\1\0'\3\2\0'\4\3\0006\5\4\0B\0\5\0016\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0005\3\t\0=\3\n\0025\3\v\0=\3\f\0025\3\r\0=\3\14\2B\0\2\1K\0\1\0\ffilters\1\0\1\rdotfiles\2\tview\1\0\1\nwidth\b20%\24update_focused_file\1\0\1\venable\2\1\0\1\15update_cwd\2\nsetup\14nvim-tree\frequire\foptions\29<cmd>:NvimTreeToggle<CR>\14<Leader>e\6n\bmap\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22config.treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15config.cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
