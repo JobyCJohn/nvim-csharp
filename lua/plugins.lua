@@ -15,12 +15,8 @@ require'packer'.startup(function()
     use {
         'gruvbox-community/gruvbox',
         setup = function()
-            if vim.fn.has('win32') == 1 then
-                vim.opt.termguicolors = true
-            end
-            vim.opt.syntax = 'enable'
-            vim.opt.background = 'dark'
             vim.cmd('colorscheme gruvbox')
+            vim.g.gruvbox_contrast_dark = 'hard'
         end
     }
     use {
@@ -116,20 +112,6 @@ require'packer'.startup(function()
             map('n', '<Leader>h', "<cmd>lua require'hop'.hint_words()<cr>", {})
             require'hop'.setup {
                 keys = 'etovxqpdygfblzhckisuran'
-            }
-        end
-    }
-
-    -- toggle terminal
-    use {
-        'akinsho/toggleterm.nvim',
-        config = function()
-            map('t', '<Esc>', [[':<C-\><C-n>']], options)
-            require'toggleterm'.setup{
-                size = vim.o.lines * 0.4,
-                start_in_insert = true,
-                close_on_exit = false,
-                open_mapping = [[<c-`>]],
             }
         end
     }
