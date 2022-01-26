@@ -15,8 +15,8 @@ require'packer'.startup(function()
     use {
         'gruvbox-community/gruvbox',
         setup = function()
-            vim.cmd('colorscheme gruvbox')
             vim.g.gruvbox_contrast_dark = 'hard'
+            vim.cmd('colorscheme gruvbox')
         end
     }
     use {
@@ -52,9 +52,16 @@ require'packer'.startup(function()
         requires = {
             { 'nvim-lua/popup.nvim' },
             { 'nvim-lua/plenary.nvim' },
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
         },
         config = function() require'config.telescope' end
+    }
+    use { 'nvim-telescope/telescope-file-browser.nvim' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use {
+        "AckslD/nvim-neoclip.lua",
+        config = function()
+            require('neoclip').setup()
+        end,
     }
 
     -- documentation
@@ -75,7 +82,8 @@ require'packer'.startup(function()
     }
     use {
         'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install'
+        run = 'cd app && yarn install',
+        cmd = 'MarkdownPreview'
     }
 
     -- code navigation and development
