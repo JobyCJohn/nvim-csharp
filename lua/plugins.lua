@@ -7,7 +7,7 @@ end
 -- only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-require'packer'.startup(function()
+require'packer'.startup({function()
     -- package manager
     use 'wbthomason/packer.nvim'
 
@@ -63,6 +63,7 @@ require'packer'.startup(function()
             require('neoclip').setup()
         end,
     }
+    use { 'tami5/lspsaga.nvim' }
 
     -- documentation
     use {
@@ -93,8 +94,6 @@ require'packer'.startup(function()
         'tpope/vim-fugitive',
         config = function ()
             map('n', '<Leader>gs', [[<cmd>lua require'config.utils'.git_status()<CR>]], options)
-            map('n', '<Leader>gl', ':diffget //2<CR>', options)
-            map('n', '<Leader>gh', ':diffget //3<CR>', options)
             map('n', '<A-Up>',     '[c', options)
             map('n', '<A-Down>',   ']c', options)
             map('n', '<A-Right>',  ':diffget //2<CR>', options)
@@ -149,7 +148,12 @@ require'packer'.startup(function()
     if packer_bootstrap then
         require('packer').sync()
     end
-end)
+end,
+config = {
+    display = {
+        open_cmd = 'rightbelow 50vnew \\[packer\\]'
+    }
+}})
 
 -- regenerate plugin compiled file
 vim.cmd([[
