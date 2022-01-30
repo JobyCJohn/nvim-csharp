@@ -13,6 +13,8 @@ map('n', '<Leader>fb', [[<cmd>Telescope file_browser<CR>]], options)
 map('n', '<Leader>fg', [[<cmd>Telescope live_grep<CR>]], options)
 map('n', '<Leader>fh', [[<cmd>Telescope help_tags<CR>]], options)
 map('n', '<Leader>fs', [[<cmd>Telescope grep_string<CR>]], options)
+map('n', '<Leader>fc', [[<cmd>lua require'config.utils'.nvim_browser()<CR>]], options)
+map('n', '<Leader>fn', [[<cmd>lua require'config.utils'.find_notes()<CR>]], options)
 
 local actions = require'telescope.actions'
 require'telescope'.setup{

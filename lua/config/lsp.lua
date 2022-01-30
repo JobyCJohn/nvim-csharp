@@ -83,7 +83,7 @@ end
 local function setup_servers()
     if vim.api.nvim_eval('&diff') == 0 then
         local lsp_installer_servers = require'nvim-lsp-installer.servers'
-        local servers = { 'omnisharp', 'powershell_es', 'tsserver', 'sumneko_lua', 'eslint', 'html', 'cssls', 'jsonls' }
+        local servers = { 'omnisharp', 'powershell_es', 'sumneko_lua' }
         for _, server in pairs(servers) do
             local server_available, requested_server = lsp_installer_servers.get_server(server)
             if server_available then

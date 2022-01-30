@@ -83,8 +83,7 @@ require'packer'.startup({function()
     }
     use {
         'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install',
-        cmd = 'MarkdownPreview'
+        run = 'cd app && yarn install'
     }
 
     -- code navigation and development
@@ -112,16 +111,6 @@ require'packer'.startup({function()
         run = ':TSUpdate',
         config = function() require'config.treesitter' end
     }
-    -- easy motion to jump in a buffer
-    use {
-        'phaazon/hop.nvim',
-        config = function()
-            map('n', '<Leader>h', "<cmd>lua require'hop'.hint_words()<cr>", {})
-            require'hop'.setup {
-                keys = 'etovxqpdygfblzhckisuran'
-            }
-        end
-    }
 
     -- language server
     use 'williamboman/nvim-lsp-installer'
@@ -131,16 +120,15 @@ require'packer'.startup({function()
     }
 
     -- auto completion and snippets
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
     use {
         'hrsh7th/nvim-cmp',
         requires = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lua',
             'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-vsnip',
             'hrsh7th/cmp-path',
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
         },
         config = function() require'config.cmp' end
     }
