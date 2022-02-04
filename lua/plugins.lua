@@ -1,7 +1,15 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+-- clone packer repository if not exist
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({
+        'git',
+        'clone',
+        '--depth',
+        '1',
+        'https://github.com/wbthomason/packer.nvim',
+        install_path
+    })
 end
 
 -- only required if you have packer configured as `opt`
@@ -35,9 +43,6 @@ require'packer'.startup({function()
                 update_cwd = true,
                 update_focused_file = {
                     enable = true,
-                },
-                view = {
-                    width = '20%',
                 },
                 filters = {
                     dotfiles = true

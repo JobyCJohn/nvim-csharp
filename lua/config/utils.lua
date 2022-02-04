@@ -13,13 +13,14 @@ M.git_status = function()
     vim.cmd('G')
 end
 
+local nvim_config = vim.fn.stdpath("config")
+local alacritty_config = '$APPDATA' .. "/alacritty"
 M.nvim_browser = function()
   require("telescope.builtin").find_files {
     prompt_title = "NVim Config Browser",
-    cwd = "~/AppData/Local/nvim",
     search_dirs = {
-      "~/AppData/Local/nvim",
-      "~/AppData/Roaming/alacritty/",
+      nvim_config,
+      alacritty_config
     },
   }
 end

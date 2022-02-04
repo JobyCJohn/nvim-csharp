@@ -4,6 +4,12 @@ _G.options = { noremap = true, silent = true }
 -- join without changing the cursor position
 map('n', 'J', 'mzJ`z', options)
 
+-- set working directory to the current file
+map('n', '<Leader>cd', ':cd %:p:h<CR>:pwd<CR>', options)
+
+-- open current file directory
+map('n', '<Leader>o', ':!start %:p:h<CR>', options)
+
 -- search result navigation without changing the cursor position
 map('n', 'n', 'nzzzv', options)
 map('n', 'N', 'Nzzzv', options)
