@@ -14,13 +14,13 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<Leader>V', '<cmd>Telescope lsp_workspace_symbols<CR>', opts)
     buf_set_keymap('n', '<Leader>d', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
     buf_set_keymap('n', '<Leader>D', '<cmd>Telescope diagnostics<CR>', opts)
-    buf_set_keymap('n', '<Leader>rn', '<cmd>Lspsaga rename<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
     buf_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>Lspsaga signature_help<CR>', opts)
     buf_set_keymap('n', '<C-f>', [[<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>]], opts)
     buf_set_keymap('n', '<C-b>', [[<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>]], opts)
+    buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', '<Leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<Leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<Leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -35,27 +35,32 @@ local function get_lsp_capabilities()
     capabilities.textDocument.colorProvider = { dynamicRegistration = false }
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-    local handlers = {
-        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = false
-        })
-    }
-
     return {
         capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers
+        on_attach = on_attach
     }
 end
 
 local function get_lsp_config(server)
     local config = get_lsp_capabilities()
+    local lsp_handler
     if server == 'omnisharp' then
         local pid = vim.fn.getpid()
         local omnisharp_path = vim.fn.stdpath("data") .. "/lsp_servers/omnisharp/omnisharp/OmniSharp.exe"
         config.cmd = { omnisharp_path, "--languageserver" , "--hostPID", tostring(pid) }
+        config.handlers = {
+            ["textDocument/definition"] = require('omnisharp_extended').handler,
+            ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                virtual_text = false
+            })
+        }
     elseif server == 'powershell_es' then
         config.bundle_path = "C:/Tools/lsp/PowerShellEditorServices"
+        config.handlers = {
+            ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                virtual_text = false
+            })
+        }
     elseif server == 'sumneko_lua' then
         local runtime_path = vim.split(package.path, ';')
         table.insert(runtime_path, "lua/?.lua")
@@ -79,7 +84,13 @@ local function get_lsp_config(server)
                 },
             },
         }
+        config.handlers = {
+            ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+                virtual_text = false
+            })
+        }
     end
+
     return config
 end
 

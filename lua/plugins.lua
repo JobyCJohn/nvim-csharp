@@ -137,6 +137,7 @@ require'packer'.startup({function()
         },
         config = function() require'config.cmp' end
     }
+    use 'hoffs/omnisharp-extended-lsp.nvim'
 
     if packer_bootstrap then
         require('packer').sync()

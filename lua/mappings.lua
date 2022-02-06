@@ -1,6 +1,9 @@
 _G.map = vim.api.nvim_set_keymap
 _G.options = { noremap = true, silent = true }
 
+-- yank to the end of the current line
+map('n', 'Y', 'y$', options)
+
 -- join without changing the cursor position
 map('n', 'J', 'mzJ`z', options)
 
