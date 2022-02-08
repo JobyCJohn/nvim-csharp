@@ -94,6 +94,7 @@ require'packer'.startup({function()
     -- code navigation and development
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-commentary'
+    use 'tpope/vim-dispatch'
     use {
         'tpope/vim-fugitive',
         config = function ()
@@ -106,7 +107,7 @@ require'packer'.startup({function()
     }
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = {

@@ -2,6 +2,15 @@ lua require('settings')
 lua require('mappings')
 lua require('plugins')
 
+" grep with ripgrep
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
+
+" open the quickfix window after doing a search
+command! -nargs=+ Grep execute 'silent grep! <args>' | copen
+
 " transparent background
 autocmd VimEnter * hi Normal ctermbg=none ctermfg=none
 
