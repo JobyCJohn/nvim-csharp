@@ -11,11 +11,8 @@ endif
 " open the quickfix window after doing a search
 command! -nargs=+ Grep execute 'silent grep! <args>' | copen
 
-" transparent background
-autocmd VimEnter * hi Normal ctermbg=none ctermfg=none
-
 " open help documentation in vertical split window
-augroup vimrc_help
+augroup vertical_help
     autocmd!
     autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
@@ -32,7 +29,8 @@ function TrimWhiteSpace()
     %s/\s*$//
     ''
 endfunction
-augroup trimwhitespace
+
+augroup trim_whitespace
     autocmd!
     autocmd BufWritePre * :call TrimWhiteSpace()
 augroup END

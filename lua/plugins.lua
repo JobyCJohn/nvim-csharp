@@ -23,7 +23,6 @@ require'packer'.startup({function()
     use {
         'gruvbox-community/gruvbox',
         setup = function()
-            vim.g.gruvbox_contrast_dark = 'hard'
             vim.cmd('colorscheme gruvbox')
         end
     }
