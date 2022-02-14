@@ -5,7 +5,7 @@ map('n', '<Leader>t', '<cmd>lua require"config.utils".project_files()<CR>', opti
 map('n', '<Leader>b', '<cmd>Telescope buffers<CR>', options)
 map('n', '<Leader>m', '<cmd>Telescope marks<CR>', options)
 map('n', '<Leader>p', '<cmd>Telescope neoclip<CR>', options)
-map('n', '<Leader>r', '<cmd>Telescope registers<CR>', options)
+map('n', '<Leader>R', '<cmd>Telescope registers<CR>', options)
 map('n', '<Leader>C', '<cmd>Telescope commands<CR>', options)
 map('n', '<Leader>H', '<cmd>Telescope command_history<CR>', options)
 map('n', '<Leader>M', '<cmd>Telescope keymaps<CR>', options)

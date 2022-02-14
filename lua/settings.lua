@@ -20,8 +20,8 @@ set.mouse = 'a'
 set.number = true
 set.pumheight = 10
 set.relativenumber = true
-set.scrolloff = 8
 set.shiftwidth = 4
+set.shm:append('I')
 set.showcmd = true
 set.showmode = false
 set.signcolumn = 'yes'

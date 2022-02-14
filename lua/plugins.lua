@@ -43,6 +43,9 @@ require'packer'.startup({function()
                 update_focused_file = {
                     enable = true,
                 },
+                view = {
+                    width = '20%',
+                },
                 filters = {
                     dotfiles = true
                 }

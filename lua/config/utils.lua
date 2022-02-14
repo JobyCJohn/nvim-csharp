@@ -26,10 +26,10 @@ M.nvim_browser = function()
 end
 
 M.find_notes = function()
-    require("telescope.builtin").find_files {
-        prompt_title = "Find Notes",
-        cwd = "~/OneDrive/Notes",
-    }
+  require("telescope.builtin").find_files {
+    prompt_title = "Find Notes",
+    cwd = "C:/Users/ing10284/OneDrive/Notes"
+  }
 end
 
 return M
