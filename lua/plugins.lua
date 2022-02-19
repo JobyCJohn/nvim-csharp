@@ -44,7 +44,7 @@ require'packer'.startup({function()
                     enable = true,
                 },
                 view = {
-                    width = '20%',
+                    width = 40,
                 },
                 filters = {
                     dotfiles = true
@@ -59,6 +59,7 @@ require'packer'.startup({function()
         requires = {
             { 'nvim-lua/popup.nvim' },
             { 'nvim-lua/plenary.nvim' },
+            { 'nvim-telescope/telescope-live-grep-raw.nvim' }
         },
         config = function() require'config.telescope' end
     }
@@ -90,7 +91,9 @@ require'packer'.startup({function()
     }
     use {
         'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install'
+        cmd = "MarkdownPreview",
+        ft = "markdown",
+        run = 'cd app && yarn install',
     }
 
     -- code navigation and development
@@ -109,7 +112,15 @@ require'packer'.startup({function()
     }
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
-    use 'windwp/nvim-autopairs'
+    use {
+        'windwp/nvim-autopairs',
+        after = "nvim-cmp",
+        config = function()
+            require("nvim-autopairs").setup({})
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            require("cmp").event:on( 'confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+        end,
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = {
@@ -148,7 +159,7 @@ require'packer'.startup({function()
 end,
 config = {
     display = {
-        open_cmd = 'rightbelow 50vnew \\[packer\\]'
+        open_cmd = 'rightbelow 40vnew \\[packer\\]'
     }
 }})
 
