@@ -1,6 +1,6 @@
 local set = vim.opt
 
-set.autoindent = true
+set.autoindent = true -- indent a new line the same amount as the line just typed
 set.autoread = true
 set.backspace = {'indent', 'eol', 'start'}
 set.backup = false
@@ -30,8 +30,8 @@ set.smartindent = true
 set.smarttab = true
 set.softtabstop = 4
 set.swapfile = false
-set.termguicolors = true -- set term gui color
 set.tabstop = 4
+set.termguicolors = true -- set term gui color
 set.undofile = false
 set.wrap = false
 

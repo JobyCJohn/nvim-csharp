@@ -97,7 +97,6 @@ require'packer'.startup({function()
     }
 
     -- code navigation and development
-    use 'tpope/vim-unimpaired'
     use 'tpope/vim-commentary'
     use 'tpope/vim-dispatch'
     use {
@@ -110,8 +109,8 @@ require'packer'.startup({function()
             map('n', '<A-Left>',   ':diffget //3<CR>', options)
         end
     }
-    use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
+    use 'tpope/vim-repeat'
     use {
         'windwp/nvim-autopairs',
         after = "nvim-cmp",

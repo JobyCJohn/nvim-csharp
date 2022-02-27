@@ -20,6 +20,7 @@ require'telescope'.setup {
         prompt_prefix = "❯ ",
         selection_caret = "❯ ",
         sorting_strategy = "ascending",
+        wrap_results = true,
         layout_config = {
             prompt_position = "top",
             width = 0.75,

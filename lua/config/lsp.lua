@@ -43,7 +43,11 @@ end
 
 local function get_lsp_config(server)
     local config = get_lsp_capabilities()
-    local lsp_handler
+    config.handlers = {
+        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            virtual_text = false
+        })
+    }
     if server == 'omnisharp' then
         local pid = vim.fn.getpid()
         local omnisharp_path = vim.fn.stdpath("data") .. "/lsp_servers/omnisharp/omnisharp/OmniSharp.exe"
@@ -56,11 +60,6 @@ local function get_lsp_config(server)
         }
     elseif server == 'powershell_es' then
         config.bundle_path = "C:/Tools/lsp/PowerShellEditorServices"
-        config.handlers = {
-            ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                virtual_text = false
-            })
-        }
     elseif server == 'sumneko_lua' then
         local runtime_path = vim.split(package.path, ';')
         table.insert(runtime_path, "lua/?.lua")
@@ -83,11 +82,6 @@ local function get_lsp_config(server)
                     },
                 },
             },
-        }
-        config.handlers = {
-            ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-                virtual_text = false
-            })
         }
     end
 
