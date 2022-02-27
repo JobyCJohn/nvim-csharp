@@ -1,6 +1,9 @@
 _G.map = vim.api.nvim_set_keymap
 _G.options = { noremap = true, silent = true }
 
+-- set working directory to the current file
+map('n', '<Leader>cd', ':cd %:p:h<CR>:pwd<CR>', options)
+
 -- use '*' and '#' results for search & replace in current file
 map('n', '<Leader>r', ':%s///g<Left><Left>', options)
 map('n', '<Leader>rc', ':%s///gc<Left><Left><Left>', options)

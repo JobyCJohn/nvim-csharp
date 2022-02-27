@@ -24,7 +24,7 @@ require'telescope'.setup {
         layout_config = {
             prompt_position = "top",
             width = 0.75,
-            height = 0.75,
+            height = 0.80,
         },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         path_display = { 'smart' },

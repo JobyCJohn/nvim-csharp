@@ -13,14 +13,14 @@ M.git_status = function()
     vim.cmd('G')
 end
 
-local nvim_config = vim.fn.stdpath("config")
-local alacritty_config = '$APPDATA' .. "/alacritty"
+local nvim_path = vim.fn.stdpath("config")
+local alacritty_path = vim.fn.expand("$APPDATA") .. "/alacritty"
 M.nvim_browser = function()
     require("telescope.builtin").find_files {
         prompt_title = "Find Configs",
         search_dirs = {
-            nvim_config,
-            alacritty_config
+            nvim_path,
+            alacritty_path
         },
     }
 end
@@ -28,7 +28,7 @@ end
 M.find_notes = function()
   require("telescope.builtin").find_files {
     prompt_title = "Find Notes",
-    cwd = "C:/Users/ing10284/OneDrive/Notes"
+    cwd = vim.fn.expand("$HOME") .. "/OneDrive/Notes"
   }
 end
 

@@ -36,21 +36,7 @@ require'packer'.startup({function()
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function()
-            map('n', '<Leader>e', '<cmd>:NvimTreeToggle<CR>', options)
-            require'nvim-tree'.setup {
-                update_cwd = true,
-                update_focused_file = {
-                    enable = true,
-                },
-                view = {
-                    width = 40,
-                },
-                filters = {
-                    dotfiles = true
-                }
-            }
-        end
+        config = function() require'config.tree' end
     }
 
     -- file and text search
@@ -101,24 +87,15 @@ require'packer'.startup({function()
     use 'tpope/vim-dispatch'
     use {
         'tpope/vim-fugitive',
-        config = function ()
-            map('n', '<Leader>gs', [[<cmd>lua require'config.utils'.git_status()<CR>]], options)
-            map('n', '<A-Up>',     '[c', options)
-            map('n', '<A-Down>',   ']c', options)
-            map('n', '<A-Right>',  ':diffget //2<CR>', options)
-            map('n', '<A-Left>',   ':diffget //3<CR>', options)
-        end
+        config = function() require'config.fugitive' end
     }
+    use 'tpope/vim-unimpaired'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use {
         'windwp/nvim-autopairs',
         after = "nvim-cmp",
-        config = function()
-            require("nvim-autopairs").setup({})
-            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-            require("cmp").event:on( 'confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
-        end,
+        config = function() require'config.autopairs' end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -152,13 +129,19 @@ require'packer'.startup({function()
     }
     use 'hoffs/omnisharp-extended-lsp.nvim'
 
+    -- debugger
+    use {
+        'mfussenegger/nvim-dap',
+        config = function() require'config.dap' end
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
 end,
 config = {
     display = {
-        open_cmd = 'rightbelow 40vnew \\[packer\\]'
+        open_cmd = 'rightbelow 60vnew \\[packer\\]'
     }
 }})
 
