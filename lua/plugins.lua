@@ -39,7 +39,7 @@ require'packer'.startup({function()
         config = function() require'config.tree' end
     }
 
-    -- file and text search
+    -- text, file search
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
@@ -49,15 +49,7 @@ require'packer'.startup({function()
         },
         config = function() require'config.telescope' end
     }
-    use { 'nvim-telescope/telescope-file-browser.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use {
-        "AckslD/nvim-neoclip.lua",
-        config = function()
-            require('neoclip').setup()
-        end,
-    }
-    use { 'tami5/lspsaga.nvim' }
 
     -- documentation
     use {
@@ -85,10 +77,6 @@ require'packer'.startup({function()
     -- code navigation and development
     use 'tpope/vim-commentary'
     use 'tpope/vim-dispatch'
-    use {
-        'tpope/vim-fugitive',
-        config = function() require'config.fugitive' end
-    }
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
@@ -106,6 +94,13 @@ require'packer'.startup({function()
         run = ':TSUpdate',
         config = function() require'config.treesitter' end
     }
+
+    -- git
+    use {
+        'tpope/vim-fugitive',
+        config = function() require'config.fugitive' end
+    }
+    use 'tpope/vim-rhubarb'
 
     -- language server
     use 'williamboman/nvim-lsp-installer'

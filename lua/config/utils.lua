@@ -6,9 +6,10 @@ M.project_files = function()
     if not ok then require("telescope.builtin").find_files(opts) end
 end
 
+local view = require'nvim-tree.view'
 M.git_status = function()
-    if require("nvim-tree.view").win_open() then
-        vim.cmd('NvimTreeToggle')
+    if view.is_visible() then
+        view.close()
     end
     vim.cmd('G')
 end

@@ -11,4 +11,4 @@ require'nvim-tree'.setup {
     }
 }
 
-map('n', '<Leader>e', '<cmd>:NvimTreeToggle<CR>', options)
+map('n', '<Leader>e', '<cmd>:NvimTreeToggle<CR>', opts)

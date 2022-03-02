@@ -1,18 +1,13 @@
-local map = vim.api.nvim_set_keymap
-local opts = { oremap = true, silent = true }
-
-map('n', '<Leader>t', '<cmd>lua require"config.utils".project_files()<CR>', options)
-map('n', '<Leader>b', '<cmd>Telescope buffers<CR>', options)
-map('n', '<Leader>f', '<cmd>lua require("telescope").extensions.live_grep_raw.live_grep_raw()<CR>', options)
-map('n', '<Leader>m', '<cmd>Telescope marks<CR>', options)
-map('n', '<Leader>p', '<cmd>Telescope neoclip<CR>', options)
-map('n', '<Leader>C', '<cmd>Telescope commands<CR>', options)
-map('n', '<Leader>M', '<cmd>Telescope keymaps<CR>', options)
-map('n', '<Leader>R', '<cmd>Telescope registers<CR>', options)
-map('n', '<Leader>fs', '<cmd>Telescope grep_string<CR>', options)
-map('n', '<Leader>fb', '<cmd>Telescope file_browser<CR>', options)
-map('n', '<Leader>fc', '<cmd>lua require"config.utils".nvim_browser()<CR>', options)
-map('n', '<Leader>fn', '<cmd>lua require"config.utils".find_notes()<CR>', options)
+map('n', '<Leader>t', '<cmd>lua require"config.utils".project_files()<CR>', opts)
+map('n', '<Leader>b', '<cmd>Telescope buffers<CR>', opts)
+map('n', '<Leader>f', '<cmd>lua require("telescope").extensions.live_grep_raw.live_grep_raw()<CR>', opts)
+map('n', '<Leader>C', '<cmd>Telescope commands<CR>', opts)
+map('n', '<Leader>F', '<cmd>Telescope grep_string<CR>', opts)
+map('n', '<Leader>K', '<cmd>Telescope keymaps<CR>', opts)
+map('n', '<Leader>M', '<cmd>Telescope marks<CR>', opts)
+map('n', '<Leader>R', '<cmd>Telescope registers<CR>', opts)
+map('n', '<Leader>fc', '<cmd>lua require"config.utils".nvim_browser()<CR>', opts)
+map('n', '<Leader>fn', '<cmd>lua require"config.utils".find_notes()<CR>', opts)
 
 local actions = require'telescope.actions'
 require'telescope'.setup {
@@ -23,7 +18,6 @@ require'telescope'.setup {
         wrap_results = true,
         layout_config = {
             prompt_position = "top",
-            width = 0.75,
             height = 0.80,
         },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
@@ -57,5 +51,3 @@ require'telescope'.setup {
 }
 
 require'telescope'.load_extension('fzf')
-require'telescope'.load_extension('file_browser')
-require'telescope'.load_extension('neoclip')
