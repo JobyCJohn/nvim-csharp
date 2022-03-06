@@ -2,6 +2,7 @@ local set = vim.opt
 
 set.autoindent = true -- indent a new line the same amount as the line just typed
 set.autoread = true
+set.autowrite = true
 set.backspace = {'indent', 'eol', 'start'}
 set.backup = false
 set.clipboard = {'unnamed', 'unnamedplus'} -- allows neovim to access the system clipboard

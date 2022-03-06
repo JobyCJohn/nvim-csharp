@@ -32,6 +32,10 @@ map('', 'x', '"_x', opts)
 map('', 'X', '"_x', opts)
 map('', '<Del>', '"_x', opts)
 
+-- navigation between split windows
+map('n', '<C-j>', '<C-w>w', opts)
+map('n', '<C-k>', '<C-w>W', opts)
+
 -- moving line above/below
 map('n', '<A-j>', ':m .+1<CR>==', opts)
 map('n', '<A-k>', ':m .-2<CR>==', opts)
