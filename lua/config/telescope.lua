@@ -1,6 +1,6 @@
 map('n', '<Leader>t', '<cmd>lua require"config.utils".project_files()<CR>', opts)
 map('n', '<Leader>b', '<cmd>Telescope buffers<CR>', opts)
-map('n', '<Leader>f', '<cmd>lua require("telescope").extensions.live_grep_raw.live_grep_raw()<CR>', opts)
+map('n', '<Leader>f', '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', opts)
 map('n', '<Leader>C', '<cmd>Telescope commands<CR>', opts)
 map('n', '<Leader>F', '<cmd>Telescope grep_string<CR>', opts)
 map('n', '<Leader>K', '<cmd>Telescope keymaps<CR>', opts)
