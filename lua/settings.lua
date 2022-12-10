@@ -35,6 +35,10 @@ set.tabstop = 4
 set.undofile = false
 set.wrap = false
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- ignore files
 set.wildignore:append('*.dll,*.pdb,*.cache,*.resources,*.exe,*.ini,*.snk,*.swp,*.swo,*.bak')
 set.wildignore:append('**/node_modules/**')
