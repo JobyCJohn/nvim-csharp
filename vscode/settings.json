@@ -1,0 +1,67 @@
+{
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "solid",
+    "editor.formatOnPaste": true,
+    "editor.guides.highlightActiveIndentation": false,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": false,
+    "editor.renderLineHighlight": "none",
+    "editor.rulers": [ 120 ],
+    "editor.scrollbar.vertical": "hidden",
+
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    "files.trimTrailingWhitespace": true,
+
+    "git.autofetch": true,
+    "git.defaultCloneDirectory": "C:\\Views\\",
+
+    "search.exclude": {
+        "**/node_modules": true
+    },
+
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "path": "C:\\Tools\\PowerShell\\pwsh.exe",
+            "args": [ "-nologo" ]
+        }
+    },
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.fontFamily": "JetBrainsMono NF",
+    "terminal.integrated.fontSize": 12,
+
+    "telemetry.telemetryLevel": "off",
+
+    "vim.smartRelativeLine": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "<C-l>" ],
+            "commands": [ ":nohl" ]
+        },
+        {
+            "before": [ "]", "<space>" ],
+            "commands": [ "extension.addNewLineAfterSelection" ]
+        },
+        {
+            "before": [ "[", "<space>" ],
+            "commands": [ "extension.addNewLineBeforeSelection" ]
+        },
+        {
+            "before": [ "<leader>", "e" ],
+            "commands": [ "workbench.action.toggleSidebarVisibility" ]
+        }
+    ],
+
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "none",
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false
+}
