@@ -30,7 +30,7 @@
         }
     },
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.fontFamily": "JetBrainsMono NF",
     "terminal.integrated.fontSize": 12,
 
@@ -56,12 +56,40 @@
         {
             "before": [ "<leader>", "e" ],
             "commands": [ "workbench.action.toggleSidebarVisibility" ]
-        }
+        },
+        {
+            "before": [ "<leader>", "f" ],
+            "commands": [ "actions.find" ]
+        },
+        {
+            "before": [ "<leader>", "p" ],
+            "commands": [ "workbench.action.quickOpen" ]
+        },
+        {
+            "before": [ "<leader>", "t" ],
+            "commands": [ "workbench.action.showAllSymbols" ]
+        },
+        {
+            "before": [ "<leader>", "g", ";" ],
+            "commands": [ "workbench.action.navigateToLastEditLocation" ]
+        },
+        {
+            "before": [ "<leader>", "g", "d" ],
+            "commands": [ "editor.action.revealdefinition" ]
+        },
+        {
+            "before": [ "<leader>", "g", "i" ],
+            "commands": [ "editor.action.goToImplementation" ]
+        },
+        {
+            "before": [ "<leader>", "g", "r" ],
+            "commands": [ "editor.action.findAllFileReferences" ]
+        },
     ],
 
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Gruvbox Dark Dark",
     "workbench.activityBar.visible": false,
     "workbench.startupEditor": "none",
     "workbench.enableExperiments": false,
-    "workbench.settings.enableNaturalLanguageSearch": false
+    "workbench.settings.enableNaturalLanguageSearch": false,
 }
