@@ -44,10 +44,10 @@ set.wildignore:append('**/node_modules/**')
 vim.api.nvim_set_keymap('n', '<space>', '', {})
 vim.g.mapleader = ' '
 
--- to use powershell
-set.shell = 'pwsh'
-set.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
-set.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-set.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-set.shellquote = ''
-set.shellxquote = ''
+-- to use powershell in windows
+-- set.shell = 'pwsh'
+-- set.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+-- set.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+-- set.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+-- set.shellquote = ''
+-- set.shellxquote = ''
