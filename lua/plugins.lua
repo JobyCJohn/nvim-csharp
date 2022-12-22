@@ -27,15 +27,15 @@ require'packer'.startup({function()
         end
     }
     use {
-        'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        'nvim-lualine/lualine.nvim',
+        requires = {'nvim-tree/nvim-web-devicons', opt = true},
         config = function() require'config.statusline' end
     }
 
     -- file explorer
     use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
+        'nvim-tree/nvim-tree.lua',
+        requires = 'nvim-tree/nvim-web-devicons',
         config = function() require'config.tree' end
     }
 
@@ -68,10 +68,14 @@ require'packer'.startup({function()
         end
     }
     use {
-        'iamcco/markdown-preview.nvim',
-        cmd = "MarkdownPreview",
-        ft = "markdown",
-        run = 'cd app && yarn install',
+        "iamcco/markdown-preview.nvim",
+        run = function()
+            fn["mkdp#util#install"]()
+        end,
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" }
     }
 
     -- code navigation and development
@@ -91,7 +95,9 @@ require'packer'.startup({function()
             'nvim-treesitter/nvim-treesitter-refactor',
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
-        run = ':TSUpdate',
+        run = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
         config = function() require'config.treesitter' end
     }
 
