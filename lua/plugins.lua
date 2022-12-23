@@ -2,18 +2,9 @@ local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 -- clone packer repository if not exist
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        'git',
-        'clone',
-        '--depth',
-        '1',
-        'https://github.com/wbthomason/packer.nvim',
-        install_path
-    })
-end
-
--- only required if you have packer configured as `opt`
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 vim.cmd [[packadd packer.nvim]]
+end
 
 require'packer'.startup({function()
     -- package manager
@@ -23,6 +14,9 @@ require'packer'.startup({function()
     use {
         'gruvbox-community/gruvbox',
         setup = function()
+            if vim.fn.has('win32') == 1 then
+                vim.opt.termguicolors = true
+            end
             vim.cmd('colorscheme gruvbox')
         end
     }
@@ -70,7 +64,7 @@ require'packer'.startup({function()
     use {
         "iamcco/markdown-preview.nvim",
         run = function()
-            fn["mkdp#util#install"]()
+            vim.fn["mkdp#util#install"]()
         end,
         setup = function()
             vim.g.mkdp_filetypes = { "markdown" }
